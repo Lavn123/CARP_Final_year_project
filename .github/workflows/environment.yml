@@ -1,12 +1,14 @@
 name: Python Package using Conda
 
-on: [push]
+on: 
+  push:
+    branches:
+      - main  # Trigger only on pushes to the 'main' branch
+  pull_request:
 
 jobs:
   build-linux:
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 5
 
     steps:
     - name: Checkout code
@@ -23,19 +25,24 @@ jobs:
         auto-update-conda: true
         auto-activate-base: true
 
-    - name: Install dependencies
+    - name: Create and Update Environment
       run: |
-        conda env update --file environment.yml --name base
+        conda env create --file environment.yml || conda env update --file environment.yml --name base
+        conda activate base
 
     - name: Lint with flake8
       run: |
-        conda activate base
         conda install -y flake8
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     - name: Test with pytest
       run: |
-        conda activate base
         conda install -y pytest
         pytest
+
+    - name: Save Conda Cache
+      uses: actions/cache@v3
+      with:
+        path: ~/.conda/envs/base
+        key: ${{ runner.os }}-conda-${{ hashFiles('environment.yml') }}
