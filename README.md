@@ -24,12 +24,18 @@ The **Centralized Aid and Response Platform (CARP)** is a unified solution desig
 - **Notification System:** Broadcast updates or emergency alerts to users.
 
 ## Technology Stack
+- **AI and ML:** TensorFlow / OpenCV for image recognition(CNN)
 - **Frontend:** Angular
 - **Backend:** Node.js (or Django/Flask as needed)
-- **Database:** MongoDB / PostgreSQL
+- **Database:** MongoDB 
 - **UI Frameworks:**
   - Angular Material / Ant Design
   - Figma/Adobe XD for wireframing and prototyping
 - **Cloud Services:** AWS / Azure / Google Cloud
-- **AI and ML:** TensorFlow / OpenCV for image recognition
+
+
+## Technology Stack
+
+- **The POC demonstration of our CARP can be viewed in the link below** 
+  https://xd.adobe.com/view/a1c698bf-4f26-47d3-8887-e49ca93c9ad9-f495/
 
