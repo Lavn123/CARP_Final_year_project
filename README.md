@@ -34,7 +34,7 @@ The **Centralized Aid and Response Platform (CARP)** is a unified solution desig
 - **Cloud Services:** AWS / Azure / Google Cloud
 
 
-## Technology Stack
+## POC ( Proof of Concept )
 
 - **The POC demonstration of our CARP can be viewed in the link below** 
   https://xd.adobe.com/view/a1c698bf-4f26-47d3-8887-e49ca93c9ad9-f495/
